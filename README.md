@@ -1,3 +1,3 @@
 # Blank-aTokens
 
-A proof of concept of tornado wallets with interest earning on Aave, using Aave's aTokens.
+A proof of concept of Blank aTokens, that allow aTokens to be held inside Tornado contracts. Earning users interest, in a completely private setting.
