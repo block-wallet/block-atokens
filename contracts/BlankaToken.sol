@@ -42,10 +42,13 @@ contract BlankaToken is Context, IERC20 {
     string private _symbol;
     address private _aTokenAddress;
 
-    constructor (string memory name_, string memory symbol_, address aTokenAddress_) {
+    constructor (string memory name_, string memory symbol_, address aTokenAddress_, uint256 initialSupply_) {
         _name = name_;
         _symbol = symbol_;
         _aTokenAddress = aTokenAddress_;
+        _totalSupply = initialSupply_;
+
+        require(IERC20(_aTokenAddress).transferFrom(_msgSender(), address(this), _totalSupply));
     }
 
     function name() public view virtual returns (string memory) {
