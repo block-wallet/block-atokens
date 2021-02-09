@@ -129,7 +129,7 @@ contract BlankaToken is Context, IERC20 {
 
     function burn(uint256 amount) public virtual returns (bool) {
         _burn(_msgSender(), amount);
-        uint256 aTokensToSend = amount / ratio();
+        uint256 aTokensToSend = amount * ratio();
 
         IERC20(_aTokenAddress).transfer(_msgSender(), aTokensToSend);
 
